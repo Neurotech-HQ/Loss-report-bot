@@ -1,0 +1,133 @@
+# greetings: state
+greetings:
+  message:
+    - Habari yako, naitwa Hadmady,  
+    - Msaidizi wako katika kutoa taarifa za usajili wa mali iliyopotea.
+    - Je unahitaji kufanya usajili wa mali yako?
+  type: text
+  next_state: end
+
+# state: Yes
+ndio:
+  message:
+    - Karibu ndugu, 
+    - Tunaanza na usajili wa taarifa binafsi
+    - Unaitwa nani(majina kamili)?
+    - "Mfano: Sammy Hosea"
+  type: text
+  next_state: gender
+
+# state: gender
+gender:
+  message:
+    - Jinsia Yako?
+    - Mfano Me/Ke
+  type: text
+  next_state: hali_ya_ndoa
+  
+# state: Marital status 
+hali_ya_ndoa:
+  message: 
+    - Hali yako ndoa?
+    - "Mfano: Sijaoa/Sijaolewa / Nimeoa/Nimeolewa"
+  type: text
+  next_state: birth_date
+
+# state: birth_date
+birth_date:
+  message:
+    - Tarehe ya kuzaliwa? 
+    - "Mfano: 14-08-2022"
+  type: text
+  next_state: national_id
+
+# state: national_id
+national_id:
+  message:
+    - Namba za kitambulisho chako cha utaifa(NIDA)?
+    - "Mfano: 12823946586484449"
+  type: text
+  next_state: filing_policy
+
+# state: filing_policy
+filing_policy:
+  message:
+    - Asante kwa taarifa binafisi, Sasa tunaendele na taarifa za mali iliyopotea
+    - Tarehe ya kupoteza?
+    - "Mfano: 14-08-2022"
+  type: text
+  next_state: place_region
+
+# state: place_region
+place_region:
+  message:
+    - Mkoa mali ulipopotezea?
+    - "Mfano: Arusha, Dodoma, Dar es salaam"
+  type: text
+  next_state: place_district
+
+# state: place_district
+place_district:
+  message: 
+    - Wilaya mali ulipopotezea?
+    - "Mfano: Ubungo, Ilala"
+  type: text
+  next_state: place_street
+
+# state: place_street
+place_street:
+  message:
+    - Sehemu au Mahali ulipopotezea?
+    - "Mfano: Mwenge, Magomeni"
+  type: text
+  next_state: property_category
+
+# state: property_category
+property_category:
+  message:
+    - Aina ya mali iliyopotea?
+    - "Mfano: simu, Kadi ya Benki, kadi ya simu, documents"
+  type: text
+  next_state: property_color
+
+# state: property_color
+property_color: 
+  massage:
+    - Rangi ya mali iliyopotea?
+  type: text
+  next_state: property_description
+
+# state: property_description
+property_description:
+  message:
+    - Maelezo mengine kuhusu mali ilivyopotea
+  type: text
+  next_state: end_filing_policy
+
+# state: end_filing_policy
+end_filing_policy:
+  message: 
+    - Asante kwa kujaza taarifa zako, pole kwa kupotelewa na mali yako.
+    - Taarifa zako zimetufikia unashauriwa kufika kituo cha karibu kuendelea na mchakato.
+  next_state: end.
+
+# State: hapana
+hapana:
+  message: 
+    - Asante, karibu sana
+  type: text
+  next_state: end
+
+# state: goodbaye
+goodbye:
+  message:
+    - Kwaheri, nimefurahi kukuhudumia karibu tena
+  type: text
+  next_state: end
+  
+# state: thanks
+thanks:
+  message:
+    - Asante, nimefurahi kukuhudumia karibu tena
+  type: text 
+  next_state: end
